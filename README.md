@@ -1,6 +1,6 @@
-# Pixel Paradox Studio
+# Pixel Paradox Studios
 
-Pixel Paradox Studio is a fictional web development studio built as a front-end showcase project.  
+Pixel Paradox Studios is a web development studio built as a front-end showcase project.  
 It demonstrates modern UI design, thoughtful layout, and interactive features — without relying on heavy frameworks.
 
 Yes, it’s fake.  
@@ -10,7 +10,7 @@ No, the code quality is not.
 
 ## 🧠 What Is This?
 
-Pixel Paradox Studio is a **multi-page static website** that represents a modern web studio:
+Pixel Paradox Studios is a **multi-page static website** that represents a modern web studio:
 
 - Clean, light-themed UI
 - Consistent design system
@@ -43,7 +43,7 @@ Think: *professional agency energy, powered by caffeine and good spacing.*
 ## 🧩 Pages Overview
 
 ### 🏠 Home
-Introduces Pixel Paradox Studio with confident messaging, modern layout, and just enough personality to feel human.
+Introduces Pixel Paradox Studios with confident messaging, modern layout, and just enough personality to feel human.
 
 ### ℹ️ About
 A deep dive into who we “are,” how we “work,” and why web development is mostly problem-solving disguised as typing.
@@ -117,5 +117,5 @@ Reuse ideas, learn from the structure, and remix responsibly.
 
 ---
 
-**Pixel Paradox Studio**  
+**Pixel Paradox Studios**  
 *Building thoughtful web experiences without unnecessary chaos.*
