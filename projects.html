@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Pixel Paradox Studios</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#fff;
+  color:#1f2937;
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 64px;
+  background:white;
+  border-bottom:1.5px solid #cbd5e1;
+}
+header h1{
+  font-weight:800;
+  color:#2563eb;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:32px;
+}
+nav a{
+  font-weight:500;
+  padding:8px 14px;
+  border-radius:10px;
+  transition:.25s;
+}
+nav a:hover{
+  background:#2563eb;
+  color:white;
+}
+
+/* HERO */
+.hero{
+  padding:120px 30px 80px;
+  text-align:center;
+}
+.hero h2{
+  font-size:54px;
+  font-weight:800;
+  color:#2563eb;
+}
+.hero p{
+  margin-top:16px;
+  max-width:820px;
+  margin-inline:auto;
+  font-size:18px;
+  color:#374151;
+}
+
+/* CONTROLS */
+.controls{
+  max-width:1150px;
+  margin:40px auto 10px;
+  padding:0 40px;
+}
+.search input{
+  width:100%;
+  padding:16px 20px;
+  font-size:16px;
+  border-radius:16px;
+  border:2px solid #cbd5e1;
+}
+.search input:focus{
+  outline:none;
+  border-color:#2563eb;
+}
+.filters{
+  margin-top:22px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.filters button{
+  padding:9px 18px;
+  border-radius:999px;
+  border:2px solid #cbd5e1;
+  background:white;
+  cursor:pointer;
+  font-size:14px;
+  transition:.25s;
+}
+.filters button.active,
+.filters button:hover{
+  background:#2563eb;
+  color:white;
+  border-color:#2563eb;
+}
+
+/* GRID */
+.projects{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 50px 110px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:28px;
+}
+
+/* CARD */
+.project{
+  border:2px solid #cbd5e1;
+  border-radius:22px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  transition:.35s;
+}
+.project:hover{
+  transform:translateY(-6px);
+  border-color:#2563eb;
+}
+.project h3{
+  color:#2563eb;
+  font-size:20px;
+}
+.meta{
+  font-size:13px;
+  color:#6b7280;
+}
+.project p{
+  font-size:14px;
+  color:#374151;
+}
+
+/* TAGS */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:6px;
+}
+.tag{
+  font-size:11px;
+  padding:4px 10px;
+  border-radius:999px;
+  border:1.5px solid #cbd5e1;
+}
+
+/* LINKS */
+.links{
+  margin-top:auto;
+  display:flex;
+  gap:10px;
+}
+.links a{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:500;
+  border:2px solid #2563eb;
+  color:#2563eb;
+  transition:.25s;
+}
+.links a:hover{
+  background:#2563eb;
+  color:white;
+}
+svg{width:16px;height:16px}
+
+/* FOOTER */
+footer{
+  background:#f8fafc;
+  border-top:5px solid #2563eb;
+  padding:80px 60px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+footer h4{
+  color:#2563eb;
+  margin-bottom:14px;
+}
+footer a{
+  display:block;
+  margin-bottom:8px;
+  font-size:14px;
+}
+footer a:hover{color:#2563eb}
+
+/* SCROLL */
+[data-animate]{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+.show{
+  opacity:1;
+  transform:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Pixel Paradox</h1>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<h2>Things We’ve Shipped</h2>
+<p>
+These projects survived planning meetings, late-night commits, and at least one “let’s just rewrite it” moment.
+</p>
+</section>
+
+<section class="controls">
+<div class="search">
+<input id="search" placeholder="Search by project, tech stack, or bad ideas that worked…">
+</div>
+<div class="filters">
+<button class="active" data-filter="all">All</button>
+<button data-filter="frontend">Frontend</button>
+<button data-filter="backend">Backend</button>
+<button data-filter="fullstack">Full Stack</button>
+<button data-filter="experimental">Experimental</button>
+</div>
+</section>
+
+<section class="projects" id="project-list" data-animate></section>
+
+<footer>
+<div>
+<h4>Pixel Paradox Studios</h4>
+<p>We build serious software with unserious levels of coffee.</p>
+</div>
+<div>
+<h4>Pages</h4>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</div>
+<div>
+<h4>Social</h4>
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+<a href="#">Twitter</a>
+</div>
+</footer>
+
+<script>
+const projects=[
+{title:"Infinite Scroll Lab",desc:"A page that never ends. Like meetings.",cat:"frontend",year:"2024",status:"Live",tags:["HTML","CSS","UX"],git:"#",demo:"#"},
+{title:"Bug Tracker Lite",desc:"Tracks bugs until morale improves.",cat:"backend",year:"2023",status:"Stable-ish",tags:["Node","Logic"],git:"#",demo:"#"},
+{title:"Coffee Metrics Dashboard",desc:"Real-time caffeine analytics.",cat:"fullstack",year:"2024",status:"Critical",tags:["APIs","Charts","Coffee"],git:"#",demo:"#"},
+{title:"404 Factory",desc:"Generates missing pages at scale.",cat:"frontend",year:"2022",status:"Operational",tags:["Design","UX"],git:"#",demo:"#"},
+{title:"Deploy Panic Button",desc:"Does nothing. Feels amazing.",cat:"experimental",year:"2023",status:"Psychological",tags:["UI","Placebo"],git:"#",demo:"#"},
+{title:"Portfolio Builder Pro",desc:"Faster than imposter syndrome.",cat:"fullstack",year:"2024",status:"Live",tags:["Templates","Web"],git:"#",demo:"#"},
+{title:"Meeting Notes AI",desc:"Summarizes meetings nobody heard.",cat:"backend",year:"2024",status:"Beta",tags:["AI","Parsing"],git:"#",demo:"#"},
+{title:"Dark Mode Toggle v12",desc:"Still not perfect.",cat:"frontend",year:"2023",status:"Iterating",tags:["CSS","Themes"],git:"#",demo:"#"},
+{title:"Client Feedback Simulator",desc:"Simulates last-minute requests.",cat:"experimental",year:"2022",status:"Accurate",tags:["UX","Chaos"],git:"#",demo:"#"},
+{title:"Launch Checklist",desc:"Everything except launch confidence.",cat:"fullstack",year:"2024",status:"Reliable",tags:["Docs","Process"],git:"#",demo:"#"}
+];
+
+const list=document.getElementById("project-list");
+function render(data){
+  list.innerHTML="";
+  data.forEach(p=>{
+    list.innerHTML+=`
+    <div class="project">
+      <h3>${p.title}</h3>
+      <div class="meta">${p.year} • ${p.status}</div>
+      <p>${p.desc}</p>
+      <div class="tags">${p.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+      <div class="links">
+        <a href="${p.git}">GitHub</a>
+        <a href="${p.demo}">Demo</a>
+      </div>
+    </div>`;
+  });
+}
+render(projects);
+
+const fuse=new Fuse(projects,{keys:["title","desc","tags"],threshold:0.35});
+document.getElementById("search").addEventListener("input",e=>{
+  const q=e.target.value;
+  render(q?fuse.search(q).map(r=>r.item):projects);
+});
+
+document.querySelectorAll(".filters button").forEach(btn=>{
+  btn.onclick=()=>{
+    document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    const f=btn.dataset.filter;
+    render(f==="all"?projects:projects.filter(p=>p.cat===f));
+  };
+});
+
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>{
+    if(i.isIntersecting){
+      i.target.classList.add("show");
+      obs.unobserve(i.target);
+    }
+  });
+},{threshold:.15});
+obs.observe(list);
+</script>
+
+</body>
+</html>

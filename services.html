@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Pixel Paradox Studios</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:#fff;
+  color:#1f2937;
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 64px;
+  background:white;
+  border-bottom:1.5px solid #cbd5e1;
+}
+header h1{
+  font-weight:800;
+  color:#2563eb;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:32px;
+}
+nav a{
+  font-weight:500;
+  padding:8px 14px;
+  border-radius:10px;
+  transition:.25s;
+}
+nav a:hover{
+  background:#2563eb;
+  color:white;
+}
+
+/* HERO */
+.hero{
+  padding:120px 30px 90px;
+  text-align:center;
+}
+.hero h2{
+  font-size:56px;
+  font-weight:800;
+  color:#2563eb;
+}
+.hero p{
+  margin-top:18px;
+  max-width:860px;
+  margin-inline:auto;
+  font-size:18px;
+  color:#374151;
+}
+
+/* SECTIONS */
+section{
+  max-width:1150px;
+  margin:auto;
+  padding:90px 50px;
+}
+.alt{
+  background:#f8fafc;
+  border-top:1.5px solid #cbd5e1;
+  border-bottom:1.5px solid #cbd5e1;
+}
+section h3{
+  font-size:34px;
+  color:#2563eb;
+  margin-bottom:20px;
+}
+section p{
+  max-width:900px;
+  font-size:16px;
+  color:#374151;
+  margin-bottom:16px;
+}
+
+/* SERVICE GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:26px;
+  margin-top:40px;
+}
+.card{
+  border:2px solid #cbd5e1;
+  border-radius:22px;
+  padding:26px;
+  transition:.3s;
+}
+.card:hover{
+  border-color:#2563eb;
+  transform:translateY(-6px);
+}
+.card h4{
+  color:#2563eb;
+  font-size:20px;
+  margin-bottom:10px;
+}
+.card p{
+  font-size:14px;
+  margin-bottom:12px;
+}
+.card ul{
+  padding-left:18px;
+  font-size:13px;
+  color:#374151;
+}
+.card li{margin-bottom:6px}
+
+/* PROCESS */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  margin-top:40px;
+}
+.step{
+  border:2px dashed #cbd5e1;
+  border-radius:20px;
+  padding:22px;
+}
+.step span{
+  font-weight:800;
+  color:#2563eb;
+  font-size:14px;
+}
+.step h5{
+  margin-top:8px;
+  font-size:18px;
+}
+
+/* CTA */
+.cta{
+  text-align:center;
+}
+.cta a{
+  display:inline-block;
+  margin-top:26px;
+  padding:16px 28px;
+  background:#2563eb;
+  color:white;
+  border-radius:14px;
+  font-weight:600;
+  transition:.25s;
+}
+.cta a:hover{
+  transform:translateY(-3px);
+}
+
+/* FOOTER */
+footer{
+  background:#f8fafc;
+  border-top:5px solid #2563eb;
+  padding:80px 60px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+footer h4{
+  color:#2563eb;
+  margin-bottom:14px;
+}
+footer a{
+  display:block;
+  margin-bottom:8px;
+  font-size:14px;
+}
+footer a:hover{color:#2563eb}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Pixel Paradox</h1>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<h2>What We Do (Shockingly Well)</h2>
+<p>
+We design, build, and ship modern web experiences. Sometimes elegantly. Sometimes aggressively.
+Always with intention. Always with backups.
+</p>
+</section>
+
+<section>
+<h3>Our Philosophy</h3>
+<p>
+Web development isn’t magic. It’s problem solving, decision making, and resisting the urge to rewrite everything at 2 a.m.
+</p>
+<p>
+At Pixel Paradox, we believe great websites should be fast, accessible, scalable, and mildly impressive to people who inspect elements.
+We don’t chase trends blindly. We interrogate them politely, then decide if they’re worth shipping.
+</p>
+<p>
+Also, yes, our primary tools are computers, keyboards, fingers, caffeine, and the occasional deep sigh.
+</p>
+</section>
+
+<section class="alt">
+<h3>Our Core Services</h3>
+
+<div class="grid">
+
+<div class="card">
+<h4>Frontend Engineering</h4>
+<p>
+Interfaces that feel smooth, intentional, and suspiciously well-aligned.
+</p>
+<ul>
+<li>Modern HTML, CSS, and JavaScript</li>
+<li>Responsive layouts that survive phones, tablets, and chaos</li>
+<li>Accessibility baked in, not sprinkled on later</li>
+<li>Animations that enhance, not distract</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Backend Development</h4>
+<p>
+The part users don’t see, but definitely feel when it breaks.
+</p>
+<ul>
+<li>APIs that respond quickly and predictably</li>
+<li>Authentication that doesn’t ruin UX</li>
+<li>Databases organized with care and fear</li>
+<li>Error handling that assumes things will go wrong</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Full Stack Builds</h4>
+<p>
+From empty folder to deployed product.
+</p>
+<ul>
+<li>Architecture planning before coding panic</li>
+<li>Frontend and backend working in harmony</li>
+<li>Scalable systems for future you</li>
+<li>Launch-day confidence (or close enough)</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>UI/UX Design</h4>
+<p>
+Because users should not need instructions to click a button.
+</p>
+<ul>
+<li>Clean, modern interface design</li>
+<li>Logical user flows</li>
+<li>Design systems that don’t collapse</li>
+<li>Pixel-level attention (we live up to the name)</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Performance Optimization</h4>
+<p>
+Making your site faster without sacrificing its soul.
+</p>
+<ul>
+<li>Speed audits and fixes</li>
+<li>Asset optimization</li>
+<li>Reducing unnecessary JavaScript (yes, really)</li>
+<li>Improving perceived performance</li>
+</ul>
+</div>
+
+<div class="card">
+<h4>Consulting & Code Rescue</h4>
+<p>
+When things exist, but shouldn't.
+</p>
+<ul>
+<li>Legacy code analysis</li>
+<li>Refactoring without rewriting the universe</li>
+<li>Second opinions that are actually helpful</li>
+<li>Honest answers, even when inconvenient</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section>
+<h3>How We Work</h3>
+<p>
+We don't believe in mystery processes or vague timelines. We believe in clarity, communication, and realistic expectations.
+</p>
+
+<div class="steps">
+<div class="step">
+<span>01</span>
+<h5>Understand the Problem</h5>
+<p>Before writing code, we ask uncomfortable questions.</p>
+</div>
+<div class="step">
+<span>02</span>
+<h5>Design With Intent</h5>
+<p>Layouts before logic. Decisions before pixels.</p>
+</div>
+<div class="step">
+<span>03</span>
+<h5>Build Thoughtfully</h5>
+<p>Clean code, meaningful names, fewer regrets.</p>
+</div>
+<div class="step">
+<span>04</span>
+<h5>Test & Refine</h5>
+<p>Break it now so users don't later.</p>
+</div>
+<div class="step">
+<span>05</span>
+<h5>Ship Confidently</h5>
+<p>Deploy. Breathe. Monitor. Celebrate briefly.</p>
+</div>
+</div>
+</section>
+
+<section class="alt cta">
+<h3>Ready to Build Something?</h3>
+<p>
+If you want a modern website that looks good, works well, and doesn't collapse under real usage, we should talk.
+</p>
+<a href="#">Start a Project</a>
+</section>
+
+<footer>
+<div>
+<h4>Pixel Paradox Studios</h4>
+<p>Modern web development with personality, process, and backups.</p>
+</div>
+<div>
+<h4>Navigate</h4>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</div>
+<div>
+<h4>Elsewhere</h4>
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+<a href="#">Twitter</a>
+</div>
+</footer>
+
+</body>
+</html>

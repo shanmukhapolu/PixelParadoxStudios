@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pixel Paradox Studios</title>
+
+<!-- Modern font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================= BASE ================= */
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  font-family:'Inter', system-ui, sans-serif;
+  background:#ffffff;
+  color:#1f2937;
+  line-height:1.7;
+  scroll-behavior:smooth;
+}
+a { text-decoration:none; color:inherit; }
+
+/* ================= HEADER ================= */
+header {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 60px;
+  background:white;
+  border-bottom:1px solid #e5e7eb;
+}
+header h1 {
+  font-weight:800;
+  letter-spacing:-0.5px;
+  color:#2563eb;
+}
+nav ul {
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+nav a {
+  font-weight:500;
+  padding:8px 14px;
+  border-radius:10px;
+  transition:0.3s;
+}
+nav a:hover {
+  background:#2563eb;
+  color:white;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position:relative;
+  padding:140px 30px 120px;
+  text-align:center;
+  overflow:hidden;
+}
+.hero h2 {
+  font-size:56px;
+  font-weight:800;
+  color:#2563eb;
+  margin-bottom:20px;
+}
+.hero p {
+  max-width:760px;
+  margin:auto;
+  font-size:18px;
+  color:#374151;
+}
+.hero .cta {
+  margin-top:40px;
+  display:inline-block;
+  padding:18px 42px;
+  background:#2563eb;
+  color:white;
+  font-weight:600;
+  border-radius:14px;
+  transition:0.3s;
+}
+.hero .cta:hover {
+  transform:translateY(-4px);
+  box-shadow:0 20px 40px rgba(37,99,235,0.25);
+}
+
+/* Static tech circles */
+.hero::before, .hero::after {
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  background:rgba(37,99,235,0.08);
+}
+.hero::before { width:420px; height:420px; top:-120px; left:-140px; }
+.hero::after { width:300px; height:300px; bottom:-100px; right:-100px; }
+
+/* ================= SECTIONS ================= */
+section {
+  max-width:1200px;
+  margin:auto;
+  padding:90px 50px;
+}
+.alt {
+  background:#f8fafc;
+  border-top:1px solid #e5e7eb;
+  border-bottom:1px solid #e5e7eb;
+}
+section h2 {
+  font-size:38px;
+  font-weight:700;
+  color:#2563eb;
+  margin-bottom:24px;
+  text-align:center;
+}
+section p.center {
+  text-align:center;
+  max-width:700px;
+  margin:0 auto 50px;
+  color:#374151;
+}
+
+/* ================= CARDS ================= */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+}
+.card {
+  background:white;
+  padding:32px;
+  border-radius:22px;
+  border:1px solid #d1d5db;
+  transition:0.4s;
+}
+.card:hover {
+  transform:translateY(-8px);
+  border-color:#2563eb;
+}
+.card h3 {
+  color:#2563eb;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+/* ================= STATS ================= */
+.stats {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  text-align:center;
+}
+.stat {
+  border:1px solid #d1d5db;
+  border-radius:20px;
+  padding:28px;
+  transition:0.3s;
+}
+.stat:hover { border-color:#2563eb; }
+.stat h3 { font-size:42px; color:#2563eb; }
+.stat p { font-size:14px; color:#374151; }
+
+/* ================= STACK ================= */
+.stack span {
+  display:inline-block;
+  padding:10px 18px;
+  margin:8px;
+  border:1px solid #d1d5db;
+  border-radius:999px;
+  font-size:14px;
+  transition:0.3s;
+}
+.stack span:hover {
+  background:#2563eb;
+  color:white;
+  border-color:#2563eb;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background:#f8fafc;
+  border-top:4px solid #2563eb;
+  padding:70px 50px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:40px;
+}
+footer h4 {
+  color:#2563eb;
+  margin-bottom:14px;
+}
+footer a {
+  display:block;
+  margin-bottom:8px;
+  color:#374151;
+  font-size:14px;
+}
+footer a:hover { color:#2563eb; }
+
+/* ================= SCROLL ================= */
+[data-animate] {
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+.show {
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Pixel Paradox</h1>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<div class="hero">
+<h2>We Design Websites. Mostly On Purpose.</h2>
+<p>
+Pixel Paradox Studios builds modern, interactive websites using cutting-edge tools,
+excessive coffee, and fingers that have typed far too many semicolons.
+</p>
+<a class="cta" href="projects.html">See What We Break</a>
+</div>
+
+<section data-animate>
+<h2>What We Actually Do</h2>
+<p class="center">Professional web services with suspiciously honest descriptions.</p>
+<div class="grid">
+<div class="card"><h3>Web Design</h3><p>Clean layouts, modern UI, and buttons that look clickable.</p></div>
+<div class="card"><h3>Web Development</h3><p>HTML, CSS, JS, and the occasional panic-driven refactor.</p></div>
+<div class="card"><h3>Optimization</h3><p>We remove bugs, then accidentally introduce newer, faster ones.</p></div>
+<div class="card"><h3>Consulting</h3><p>We tell you what you already know, but with charts.</p></div>
+</div>
+</section>
+
+<section class="alt" data-animate>
+<h2>Our Impressive Numbers</h2>
+<div class="stats">
+<div class="stat"><h3>9,842</h3><p>Lines of Code Typed Aggressively</p></div>
+<div class="stat"><h3>317</h3><p>Cups of Coffee Consumed</p></div>
+<div class="stat"><h3>0</h3><p>Projects Launched Without Panic</p></div>
+<div class="stat"><h3>100%</h3><p>Confidence Until Deployment</p></div>
+</div>
+</section>
+
+<section data-animate>
+<h2>Our Tech Stack</h2>
+<p class="center">Carefully selected tools, plus vibes.</p>
+<div class="stack center">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Git</span>
+<span>Browsers</span>
+<span>Keyboards</span>
+<span>Coffee</span>
+<span>Stack Overflow</span>
+</div>
+</section>
+
+<section class="alt" data-animate>
+<h2>How We Work</h2>
+<div class="grid">
+<div class="card"><h3>1. Think</h3><p>We stare at screens and question our life choices.</p></div>
+<div class="card"><h3>2. Build</h3><p>Things start appearing. Some are intentional.</p></div>
+<div class="card"><h3>3. Fix</h3><p>We aggressively remove bugs we definitely didn’t create.</p></div>
+<div class="card"><h3>4. Ship</h3><p>Deploy, refresh, and pretend that warning didn’t exist.</p></div>
+</div>
+</section>
+
+<footer>
+<div>
+<h4>Pixel Paradox Studios</h4>
+<p>Modern web experiences, engineered with care and caffeine.</p>
+</div>
+<div>
+<h4>Pages</h4>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</div>
+<div>
+<h4>Social</h4>
+<a href="#">GitHub</a>
+<a href="#">LinkedIn</a>
+<a href="#">Twitter</a>
+</div>
+</footer>
+
+<script>
+const items=document.querySelectorAll('[data-animate]');
+const obs=new IntersectionObserver(e=>{
+  e.forEach(i=>{
+    if(i.isIntersecting){
+      i.target.classList.add('show');
+      obs.unobserve(i.target);
+    }
+  });
+},{threshold:0.15});
+items.forEach(i=>obs.observe(i));
+</script>
+
+</body>
+</html>
